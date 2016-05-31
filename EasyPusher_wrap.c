@@ -207,6 +207,8 @@ static void Swig_free(void* p) {
    #include "EasyPusherAPI.h"
    extern Easy_I32 GO_EasyPusher_Activate(char *license);
    extern Easy_Pusher_Handle GO_EasyPusher_Create();
+   extern Easy_U32 GO_EasyPusher_Release(Easy_Pusher_Handle handle);
+   extern Easy_U32 GO_EasyPusher_SetEventCallback(Easy_Pusher_Handle handle,  EasyPusher_Callback callback, int id, void *userptr);
    extern Easy_U32 GO_EasyPusher_StartStream(Easy_Pusher_Handle handle, char* serverAddr, Easy_U16 port, char* streamName, char *username, char *password, EASY_MEDIA_INFO_T*  pstruStreamInfo, Easy_U32 bufferKSize, Easy_Bool createlogfile );
    extern Easy_U32 GO_EasyPusher_StopStream(Easy_Pusher_Handle handle);
    extern Easy_U32 GO_EasyPusher_PushFrame(Easy_Pusher_Handle handle, EASY_AV_Frame* frame );
@@ -215,7 +217,7 @@ static void Swig_free(void* p) {
 extern "C" {
 #endif
 
-void _wrap_Swig_free_EasyPusher_993691126ef1af58(void *_swig_go_0) {
+void _wrap_Swig_free_EasyPusher_aae9859e28d5755f(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -225,7 +227,7 @@ void _wrap_Swig_free_EasyPusher_993691126ef1af58(void *_swig_go_0) {
 }
 
 
-Easy_I32 *_wrap_GO_EasyPusher_Activate_EasyPusher_993691126ef1af58(_gostring_ _swig_go_0) {
+Easy_I32 *_wrap_GO_EasyPusher_Activate_EasyPusher_aae9859e28d5755f(_gostring_ _swig_go_0) {
   char *arg1 = (char *) 0 ;
   Easy_I32 result;
   Easy_I32 *_swig_go_result;
@@ -242,7 +244,7 @@ Easy_I32 *_wrap_GO_EasyPusher_Activate_EasyPusher_993691126ef1af58(_gostring_ _s
 }
 
 
-Easy_Pusher_Handle *_wrap_GO_EasyPusher_Create_EasyPusher_993691126ef1af58() {
+Easy_Pusher_Handle *_wrap_GO_EasyPusher_Create_EasyPusher_aae9859e28d5755f() {
   Easy_Pusher_Handle result;
   Easy_Pusher_Handle *_swig_go_result;
   
@@ -257,7 +259,68 @@ Easy_Pusher_Handle *_wrap_GO_EasyPusher_Create_EasyPusher_993691126ef1af58() {
 }
 
 
-Easy_U32 *_wrap_GO_EasyPusher_StartStream_EasyPusher_993691126ef1af58(Easy_Pusher_Handle *_swig_go_0, _gostring_ _swig_go_1, Easy_U16 *_swig_go_2, _gostring_ _swig_go_3, _gostring_ _swig_go_4, _gostring_ _swig_go_5, EASY_MEDIA_INFO_T *_swig_go_6, Easy_U32 *_swig_go_7, Easy_Bool *_swig_go_8) {
+Easy_U32 *_wrap_GO_EasyPusher_Release_EasyPusher_aae9859e28d5755f(Easy_Pusher_Handle *_swig_go_0) {
+  Easy_Pusher_Handle arg1 ;
+  Easy_Pusher_Handle *argp1 ;
+  Easy_U32 result;
+  Easy_U32 *_swig_go_result;
+  
+  
+  argp1 = (Easy_Pusher_Handle *)_swig_go_0;
+  if (argp1 == NULL) {
+    _swig_gopanic("Attempt to dereference null Easy_Pusher_Handle");
+  }
+  arg1 = (Easy_Pusher_Handle)*argp1;
+  
+  
+  result = GO_EasyPusher_Release(arg1);
+  {
+    Easy_U32 * resultptr = (Easy_U32 *)malloc(sizeof(Easy_U32));
+    memmove(resultptr, &result, sizeof(Easy_U32));
+    *(Easy_U32 **)&_swig_go_result = resultptr;
+  }
+  return _swig_go_result;
+}
+
+
+Easy_U32 *_wrap_GO_EasyPusher_SetEventCallback_EasyPusher_aae9859e28d5755f(Easy_Pusher_Handle *_swig_go_0, EasyPusher_Callback *_swig_go_1, intgo _swig_go_2, void *_swig_go_3) {
+  Easy_Pusher_Handle arg1 ;
+  EasyPusher_Callback arg2 ;
+  int arg3 ;
+  void *arg4 = (void *) 0 ;
+  Easy_Pusher_Handle *argp1 ;
+  EasyPusher_Callback *argp2 ;
+  Easy_U32 result;
+  Easy_U32 *_swig_go_result;
+  
+  
+  argp1 = (Easy_Pusher_Handle *)_swig_go_0;
+  if (argp1 == NULL) {
+    _swig_gopanic("Attempt to dereference null Easy_Pusher_Handle");
+  }
+  arg1 = (Easy_Pusher_Handle)*argp1;
+  
+  
+  argp2 = (EasyPusher_Callback *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null EasyPusher_Callback");
+  }
+  arg2 = (EasyPusher_Callback)*argp2;
+  
+  arg3 = (int)_swig_go_2; 
+  arg4 = *(void **)&_swig_go_3; 
+  
+  result = GO_EasyPusher_SetEventCallback(arg1,arg2,arg3,arg4);
+  {
+    Easy_U32 * resultptr = (Easy_U32 *)malloc(sizeof(Easy_U32));
+    memmove(resultptr, &result, sizeof(Easy_U32));
+    *(Easy_U32 **)&_swig_go_result = resultptr;
+  }
+  return _swig_go_result;
+}
+
+
+Easy_U32 *_wrap_GO_EasyPusher_StartStream_EasyPusher_aae9859e28d5755f(Easy_Pusher_Handle *_swig_go_0, _gostring_ _swig_go_1, Easy_U16 *_swig_go_2, _gostring_ _swig_go_3, _gostring_ _swig_go_4, _gostring_ _swig_go_5, EASY_MEDIA_INFO_T *_swig_go_6, Easy_U32 *_swig_go_7, Easy_Bool *_swig_go_8) {
   Easy_Pusher_Handle arg1 ;
   char *arg2 = (char *) 0 ;
   Easy_U16 arg3 ;
@@ -318,7 +381,7 @@ Easy_U32 *_wrap_GO_EasyPusher_StartStream_EasyPusher_993691126ef1af58(Easy_Pushe
 }
 
 
-Easy_U32 *_wrap_GO_EasyPusher_StopStream_EasyPusher_993691126ef1af58(Easy_Pusher_Handle *_swig_go_0) {
+Easy_U32 *_wrap_GO_EasyPusher_StopStream_EasyPusher_aae9859e28d5755f(Easy_Pusher_Handle *_swig_go_0) {
   Easy_Pusher_Handle arg1 ;
   Easy_Pusher_Handle *argp1 ;
   Easy_U32 result;
@@ -342,7 +405,7 @@ Easy_U32 *_wrap_GO_EasyPusher_StopStream_EasyPusher_993691126ef1af58(Easy_Pusher
 }
 
 
-Easy_U32 *_wrap_GO_EasyPusher_PushFrame_EasyPusher_993691126ef1af58(Easy_Pusher_Handle *_swig_go_0, EASY_AV_Frame *_swig_go_1) {
+Easy_U32 *_wrap_GO_EasyPusher_PushFrame_EasyPusher_aae9859e28d5755f(Easy_Pusher_Handle *_swig_go_0, EASY_AV_Frame *_swig_go_1) {
   Easy_Pusher_Handle arg1 ;
   EASY_AV_Frame *arg2 = (EASY_AV_Frame *) 0 ;
   Easy_Pusher_Handle *argp1 ;

@@ -13,10 +13,8 @@
 package EasyPusher
 
 /*
-
 #cgo CFLAGS: -I .
 #cgo LDFLAGS: -L . -llibEasyPusher
-
 #define intgo swig_intgo
 typedef void *swig_voidp;
 
@@ -37,12 +35,14 @@ typedef _gostring_ swig_type_2;
 typedef _gostring_ swig_type_3;
 typedef _gostring_ swig_type_4;
 typedef _gostring_ swig_type_5;
-extern void _wrap_Swig_free_EasyPusher_993691126ef1af58(uintptr_t arg1);
-extern uintptr_t _wrap_GO_EasyPusher_Activate_EasyPusher_993691126ef1af58(swig_type_1 arg1);
-extern uintptr_t _wrap_GO_EasyPusher_Create_EasyPusher_993691126ef1af58(void);
-extern uintptr_t _wrap_GO_EasyPusher_StartStream_EasyPusher_993691126ef1af58(uintptr_t arg1, swig_type_2 arg2, uintptr_t arg3, swig_type_3 arg4, swig_type_4 arg5, swig_type_5 arg6, uintptr_t arg7, uintptr_t arg8, uintptr_t arg9);
-extern uintptr_t _wrap_GO_EasyPusher_StopStream_EasyPusher_993691126ef1af58(uintptr_t arg1);
-extern uintptr_t _wrap_GO_EasyPusher_PushFrame_EasyPusher_993691126ef1af58(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_Swig_free_EasyPusher_aae9859e28d5755f(uintptr_t arg1);
+extern uintptr_t _wrap_GO_EasyPusher_Activate_EasyPusher_aae9859e28d5755f(swig_type_1 arg1);
+extern uintptr_t _wrap_GO_EasyPusher_Create_EasyPusher_aae9859e28d5755f(void);
+extern uintptr_t _wrap_GO_EasyPusher_Release_EasyPusher_aae9859e28d5755f(uintptr_t arg1);
+extern uintptr_t _wrap_GO_EasyPusher_SetEventCallback_EasyPusher_aae9859e28d5755f(uintptr_t arg1, uintptr_t arg2, swig_intgo arg3, uintptr_t arg4);
+extern uintptr_t _wrap_GO_EasyPusher_StartStream_EasyPusher_aae9859e28d5755f(uintptr_t arg1, swig_type_2 arg2, uintptr_t arg3, swig_type_3 arg4, swig_type_4 arg5, swig_type_5 arg6, uintptr_t arg7, uintptr_t arg8, uintptr_t arg9);
+extern uintptr_t _wrap_GO_EasyPusher_StopStream_EasyPusher_aae9859e28d5755f(uintptr_t arg1);
+extern uintptr_t _wrap_GO_EasyPusher_PushFrame_EasyPusher_aae9859e28d5755f(uintptr_t arg1, uintptr_t arg2);
 #undef intgo
 */
 import "C"
@@ -63,13 +63,13 @@ type _ sync.Mutex
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_EasyPusher_993691126ef1af58(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_EasyPusher_aae9859e28d5755f(C.uintptr_t(_swig_i_0))
 }
 
 func GO_EasyPusher_Activate(arg1 string) (_swig_ret Easy_I32) {
 	var swig_r Easy_I32
 	_swig_i_0 := arg1
-	swig_r = (Easy_I32)(SwigcptrEasy_I32(C._wrap_GO_EasyPusher_Activate_EasyPusher_993691126ef1af58(*(*C.swig_type_1)(unsafe.Pointer(&_swig_i_0)))))
+	swig_r = (Easy_I32)(SwigcptrEasy_I32(C._wrap_GO_EasyPusher_Activate_EasyPusher_aae9859e28d5755f(*(*C.swig_type_1)(unsafe.Pointer(&_swig_i_0)))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}
@@ -78,7 +78,24 @@ func GO_EasyPusher_Activate(arg1 string) (_swig_ret Easy_I32) {
 
 func GO_EasyPusher_Create() (_swig_ret Easy_Pusher_Handle) {
 	var swig_r Easy_Pusher_Handle
-	swig_r = (Easy_Pusher_Handle)(SwigcptrEasy_Pusher_Handle(C._wrap_GO_EasyPusher_Create_EasyPusher_993691126ef1af58()))
+	swig_r = (Easy_Pusher_Handle)(SwigcptrEasy_Pusher_Handle(C._wrap_GO_EasyPusher_Create_EasyPusher_aae9859e28d5755f()))
+	return swig_r
+}
+
+func GO_EasyPusher_Release(arg1 Easy_Pusher_Handle) (_swig_ret Easy_U32) {
+	var swig_r Easy_U32
+	_swig_i_0 := arg1.Swigcptr()
+	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_Release_EasyPusher_aae9859e28d5755f(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func GO_EasyPusher_SetEventCallback(arg1 Easy_Pusher_Handle, arg2 EasyPusher_Callback, arg3 int, arg4 uintptr) (_swig_ret Easy_U32) {
+	var swig_r Easy_U32
+	_swig_i_0 := arg1.Swigcptr()
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_SetEventCallback_EasyPusher_aae9859e28d5755f(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.swig_intgo(_swig_i_2), C.uintptr_t(_swig_i_3))))
 	return swig_r
 }
 
@@ -93,7 +110,7 @@ func GO_EasyPusher_StartStream(arg1 Easy_Pusher_Handle, arg2 string, arg3 Easy_U
 	_swig_i_6 := arg7.Swigcptr()
 	_swig_i_7 := arg8.Swigcptr()
 	_swig_i_8 := arg9.Swigcptr()
-	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_StartStream_EasyPusher_993691126ef1af58(C.uintptr_t(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1)), C.uintptr_t(_swig_i_2), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_3)), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_4)), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_5)), C.uintptr_t(_swig_i_6), C.uintptr_t(_swig_i_7), C.uintptr_t(_swig_i_8))))
+	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_StartStream_EasyPusher_aae9859e28d5755f(C.uintptr_t(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1)), C.uintptr_t(_swig_i_2), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_3)), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_4)), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_5)), C.uintptr_t(_swig_i_6), C.uintptr_t(_swig_i_7), C.uintptr_t(_swig_i_8))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
@@ -112,7 +129,7 @@ func GO_EasyPusher_StartStream(arg1 Easy_Pusher_Handle, arg2 string, arg3 Easy_U
 func GO_EasyPusher_StopStream(arg1 Easy_Pusher_Handle) (_swig_ret Easy_U32) {
 	var swig_r Easy_U32
 	_swig_i_0 := arg1.Swigcptr()
-	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_StopStream_EasyPusher_993691126ef1af58(C.uintptr_t(_swig_i_0))))
+	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_StopStream_EasyPusher_aae9859e28d5755f(C.uintptr_t(_swig_i_0))))
 	return swig_r
 }
 
@@ -120,7 +137,7 @@ func GO_EasyPusher_PushFrame(arg1 Easy_Pusher_Handle, arg2 EASY_AV_Frame) (_swig
 	var swig_r Easy_U32
 	_swig_i_0 := arg1.Swigcptr()
 	_swig_i_1 := arg2.Swigcptr()
-	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_PushFrame_EasyPusher_993691126ef1af58(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))))
+	swig_r = (Easy_U32)(SwigcptrEasy_U32(C._wrap_GO_EasyPusher_PushFrame_EasyPusher_aae9859e28d5755f(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))))
 	return swig_r
 }
 
@@ -184,5 +201,14 @@ type Easy_U32 interface {
 }
 
 func (p SwigcptrEasy_U32) Swigcptr() uintptr {
+	return uintptr(p)
+}
+
+type SwigcptrEasyPusher_Callback uintptr
+type EasyPusher_Callback interface {
+	Swigcptr() uintptr
+}
+
+func (p SwigcptrEasyPusher_Callback) Swigcptr() uintptr {
 	return uintptr(p)
 }
